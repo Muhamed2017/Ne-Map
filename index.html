@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>NE-Map</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div id="show" data-bind="click: hideShow"><a class="sh" href="#">menu</a></div>
+        </nav>
+    </header>
+    <div id="container">
+      
+       <!-- input text form -->
+        <aside id="allplaces">
+            <input id="filter" type="text" placeholder="Type Name of Location" data-bind="textInput: inputSearch ,valueUpdate: 'afterkeydown'">
+
+            <ul data-bind="foreach: filterd">
+                <li data-bind="text: title, click: isClick "></li>
+            </ul>
+        </aside>
+        <!-- map section -->
+        <main id="map"></main>
+
+    </div>
+    
+    
+    <script src="js/jquery.min.js"></script>
+    <script src="js/knockout-3.4.2.js"></script>    
+    <script src="js/functions.js"></script>
+    <script src="js/scripts.js"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAblZqcjj-ThDNw1WONUu5QLxB-eyQ_Z40&libraries=geometry,drawing&v=3&callback=initMap" onerror="ErrorLoading()">
+
+
+    </script>
+
+
+</body>
+
+</html>
